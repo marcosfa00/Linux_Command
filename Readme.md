@@ -609,3 +609,67 @@ Example:
 wget http://www.example.com/file.txt
 ```
 
+# Continued: File Archiving and Compression Commands
+
+In this continuation, we'll delve deeper into file archiving and compression commands, distinguishing between archiving and compression, creating archived files, and applying commands to compress, decompress, and extract files from archives.
+
+## Creating Archived Files
+
+### tar
+- `tar`: Archives and de-archives files and directories.
+```bash
+tar -cf <archive_name> <file/directory>
+```
+Example:
+```bash
+tar -cf notes.tar notes/
+```
+- To compress the archive:
+```bash
+tar -czf <archive_name.tar.gz> <file/directory>
+```
+Example:
+```bash
+tar -czf notes.tar.gz notes/
+```
+
+### zip
+- `zip`: Compresses files and directories into a single archive.
+```bash
+zip <archive_name.zip> <file/directory>
+```
+Example:
+```bash
+zip notes.zip notes/
+```
+
+## Extracting and Decompressing
+
+### tar
+- To extract an archive:
+```bash
+tar -xf <archive_name>
+```
+Example:
+```bash
+tar -xf notes.tar
+```
+- To decompress and extract a compressed archive:
+```bash
+tar -xzf <compressed_archive_name.tar.gz>
+```
+Example:
+```bash
+tar -xzf notes.tar.gz
+```
+
+### unzip
+- `unzip`: Extracts compressed files from a zip archive and decompresses them.
+```bash
+unzip <archive_name.zip>
+```
+Example:
+```bash
+unzip notes.zip
+```
+
