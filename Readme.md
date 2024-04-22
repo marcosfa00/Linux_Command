@@ -421,4 +421,101 @@ Example:
 chmod +x my_script.sh
 ```
 
+# Continued: Useful Commands for Wrangling Text Files
+
+In this continuation, we'll further explore commands for manipulating text files, including sorting lines, removing duplicates, searching for patterns, extracting slices and fields, and merging lines from multiple files.
+
+## Sorting Lines
+
+### sort
+- `sort`: Sorts the lines of a file alpha-numerically.
+```bash
+sort <filename>
+```
+Example:
+```bash
+sort pets.txt
+```
+- To sort in reverse order:
+```bash
+sort -r <filename>
+```
+Example:
+```bash
+sort -r pets.txt
+```
+
+## Removing Repeated Lines
+
+### uniq
+- `uniq`: Filters out repeated lines from a sorted file.
+```bash
+uniq <filename>
+```
+Example:
+```bash
+uniq pets.txt
+```
+
+## Searching for Patterns
+
+### grep
+- `grep`: Searches for lines matching a specified pattern.
+```bash
+grep <pattern> <filename>
+```
+Example:
+```bash
+grep "c h" people.txt
+```
+- To perform a case-insensitive search:
+```bash
+grep -i <pattern> <filename>
+```
+Example:
+```bash
+grep -i "c h" people.txt
+```
+
+## Extracting Slices and Fields
+
+### cut
+- `cut`: Extracts specific sections from each line.
+```bash
+cut -c <start>-<end> <filename>
+```
+Example:
+```bash
+cut -c 2-9 people.txt
+```
+- To specify a custom field delimiter:
+```bash
+cut -d "<delimiter>" -f <field> <filename>
+```
+Example:
+```bash
+cut -d " " -f 2 people.txt
+```
+
+## Merging Lines from Multiple Files
+
+### paste
+- `paste`: Merges lines from multiple files.
+```bash
+paste <file1> <file2> ... <fileN>
+```
+Example:
+```bash
+paste first.txt last.txt yob.txt
+```
+- To specify a custom delimiter:
+```bash
+paste -d "<delimiter>" <file1> <file2> ... <fileN>
+```
+Example:
+```bash
+paste -d "," first.txt last.txt yob.txt
+```
+
+
 
