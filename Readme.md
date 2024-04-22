@@ -517,5 +517,95 @@ Example:
 paste -d "," first.txt last.txt yob.txt
 ```
 
+# Continued: Networking Commands
 
+In this continuation, we'll further explore networking commands to examine network configuration, evaluate URL connections, and retrieve data from URLs.
+
+## Examining Network Configuration
+
+### hostname
+- `hostname`: Gets or sets the hostname and other identifying information of your computer.
+```bash
+hostname
+```
+Example:
+```bash
+hostname
+```
+- To get the IP address of the hostname:
+```bash
+hostname -i
+```
+Example:
+```bash
+hostname -i
+```
+
+### ifconfig
+- `ifconfig`: Displays information regarding all communication devices.
+```bash
+ifconfig
+```
+Example:
+```bash
+ifconfig
+```
+- To inspect a specific device:
+```bash
+ifconfig <device>
+```
+Example:
+```bash
+ifconfig eth0
+```
+
+## Testing Connectivity
+
+### ping
+- `ping`: Tests connectivity to a host or IP address.
+```bash
+ping <hostname/IP>
+```
+Example:
+```bash
+ping google.com
+```
+- To specify the number of ping results:
+```bash
+ping -c <count> <hostname/IP>
+```
+Example:
+```bash
+ping -c 5 google.com
+```
+
+## Retrieving Data from URLs
+
+### curl
+- `curl`: Transfers data to and from URLs, supporting various protocols.
+```bash
+curl <URL>
+```
+Example:
+```bash
+curl www.google.com
+```
+- To save the contents to a local file:
+```bash
+curl -o <filename> <URL>
+```
+Example:
+```bash
+curl -o google.txt www.google.com
+```
+
+### wget
+- `wget`: Retrieves files located at a URL, with recursive downloading capabilities.
+```bash
+wget <URL>
+```
+Example:
+```bash
+wget http://www.example.com/file.txt
+```
 
