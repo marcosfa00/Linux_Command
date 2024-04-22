@@ -49,50 +49,69 @@
    chmod +x script.sh
    ```
 
-### Ejemplos de Uso
 
-1. **Crear un directorio:**
-
-   ```bash
-   mkdir documentos
-   ```
-
-2. **Eliminar un archivo:**
-
-   ```bash
-   rm archivo.txt
-   ```
-
-3. **Crear un archivo vacío:**
-
-   ```bash
-   touch notas.txt
-   ```
-
-4. **Copiar un archivo a otro directorio:**
-
-   ```bash
-   cp archivo.txt documentos/
-   ```
-
-5. **Mover un archivo a otro directorio:**
-
-   ```bash
-   mv archivo.txt documentos/
-   ```
-
-6. **Listar el contenido de un directorio:**
-
-   ```bash
-   ls
-   ```
-
-7. **Dar permisos de ejecución a un script:**
-
-   ```bash
-   chmod +x script.sh
-   ```
+**Introducción a las Variables de Shell**
 
 
+### ¿Qué es una variable de shell?
+
+Las variables de shell son una manera poderosa de almacenar y acceder o modificar información, como números, cadenas de caracteres y otras estructuras de datos, mediante un nombre. Veamos algunos ejemplos básicos para entender mejor este concepto.
+
+Consideremos el siguiente ejemplo:
+
+```bash
+$ firstname=Jeff
+$ echo $firstname
+Jeff
+```
+
+La primera línea asigna el valor Jeff a una nueva variable llamada firstname. La siguiente línea accede y muestra el valor de la variable, utilizando el comando echo junto con el carácter especial $ delante del nombre de la variable para extraer su valor, que es la cadena Jeff.
+
+Por lo tanto, hemos creado una nueva variable de shell llamada firstname cuyo valor es Jeff.
+
+Esta es la forma más básica de crear una variable de shell y asignarle un valor en un solo paso.
+
+### Lectura de la entrada del usuario en una variable de shell en la línea de comandos
+
+Aquí hay otra forma de crear una variable de shell, utilizando el comando read.
+
+Después de ingresar
+
+```bash
+$ read lastname
+```
+
+en la línea de comandos, el shell espera a que ingreses algún texto:
+
+```bash
+$ read lastname  
+Grossman  
+$ 
+```
+
+Ahora podemos ver que el valor Grossman acaba de ser almacenado en la variable lastname por el comando read:
+
+```bash
+$ read lastname  
+Grossman  
+$ echo $lastname  
+Grossman  
+```
+
+Por cierto, observa que puedes imprimir los valores de múltiples variables a la vez:
+
+```bash
+$ echo $firstname $lastname  
+Jeff Grossman  
+```
+
+Como verás pronto, el comando read es particularmente útil en la creación de scripts de shell. Puedes usarlo dentro de un script de shell para solicitar a los usuarios que ingresen información, la cual luego se almacena en una variable de shell y está disponible para su uso por el script de shell mientras se ejecuta. También aprenderás sobre los argumentos de línea de comandos, que son valores que se pueden pasar a un script y asignados automáticamente a variables de shell.
+
+### Resumen
+
+En esta lectura, aprendiste que:
+
+- Las variables de shell almacenan valores y permiten a los usuarios acceder a ellos posteriormente por nombre.
+- Puedes crear variables de shell declarando una variable de shell y un valor o utilizando el comando read.
 
 
