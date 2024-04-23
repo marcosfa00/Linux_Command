@@ -115,3 +115,31 @@ En esta lectura, aprendiste que:
 - Puedes crear variables de shell declarando una variable de shell y un valor o utilizando el comando read.
 
 
+# Programación de tareas utilizando Cron
+
+¡Bienvenido a la programación de tareas utilizando Cron! Después de ver este video, podrás:
+
+- Programar tareas con Cron mediante crontab.
+- Describir la sintaxis de Cron.
+- Aplicar y eliminar tareas programadas con Cron.
+
+Ya seas un administrador de sistemas, un ingeniero de datos o incluso un desarrollador, puede haber momentos en los que desees programar ciertas tareas para que se ejecuten automáticamente en momentos específicos. Por ejemplo, puedes querer programar un script de carga para que se ejecute todos los días a medianoche y un script de respaldo para que se ejecute todos los domingos a las 2 AM. La utilidad cron en sistemas operativos Linux y similares a Unix te permite hacer exactamente eso.
+
+**Cron** es el nombre general de la herramienta que ejecuta tareas programadas que consisten en comandos de shell o scripts de shell. **Crond** es el daemon o servicio que interpreta los "archivos crontab" cada minuto y envía las tareas correspondientes a Cron en los horarios programados. Un **crontab**, abreviatura de "tabla cron", es un archivo que contiene tareas y datos de programación. Crontab también es un comando que invoca un editor de texto para permitirte editar un archivo crontab. Al ingresar `crontab -e` en la línea de comandos, se abrirá el editor de texto predeterminado. Utilizando el editor, puedes especificar una nueva programación y un comando, que tiene la siguiente sintaxis: "comando" puede ser cualquier comando de shell, incluida una llamada a un script de shell. Los símbolos representan minuto, hora, día del mes, mes y día de la semana. Las cinco posiciones deben tener una entrada numérica o un asterisco, que es un símbolo comodín que significa "cualquier cosa". Por ejemplo, la siguiente sintaxis significa: agregar la fecha actual al archivo 'domingos.txt' a las 15:30 todos los domingos. Al cerrar el editor y guardar los cambios, se agrega la tarea a la tabla cron.
+
+Ahora, veamos más de cerca cada uno de estos pasos:
+
+1. Al ingresar `crontab -e` en la línea de comandos, se abrirá el editor de texto predeterminado. En este caso, el editor predeterminado es GNU nano. Convenientemente, las instrucciones para configurar tareas programadas están incluidas aquí como comentarios. También se incluyen instrucciones para usar el editor, pero probablemente solo necesitarás "control x" en este contexto.
+2. Aquí he ingresado tres ejemplos de tareas cron. Observa que los espacios adicionales se ignoran, por lo que para mejorar la legibilidad, puedes alinear tus entradas como columnas bajo el encabezado.
+3. La primera entrada instruye a cron que agregue la fecha actual al archivo 'domingos.txt' a las 15:30 todos los domingos. La siguiente línea especifica un script de shell "cargar datos" que se ejecutará a medianoche todos los días, mientras que la última línea hace que cron ejecute el script de shell "respaldo" a las 2 AM los domingos. Para guardar la tarea, primero escribe "control x" para salir del editor y luego ingresa "y" para guardar los cambios. ¡Las tareas están ahora en producción!
+4. Ejecutar `crontab -l` devuelve una lista de todas las tareas cron y sus programaciones. He utilizado `tail` para evitar devolver todos los comentarios del archivo crontab.
+5. Para eliminar una tarea, simplemente invoca el editor de crontab, elimina la línea correspondiente en el archivo crontab y guarda los cambios.
+
+En este video, aprendiste que:
+
+- Las tareas cron pueden programarse para ejecutarse periódicamente en momentos seleccionados.
+- Cron, Crond y Crontab tienen funciones diferentes.
+- Al ingresar `crontab -e` en la línea de comandos se abre el editor de texto predeterminado.
+- Ejecutar `crontab -l` devuelve una lista de todas las tareas cron y sus programaciones.
+
+
