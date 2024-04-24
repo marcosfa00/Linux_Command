@@ -1,0 +1,15 @@
+# CRONTAB PRACTICE:
+
+  GNU nano 2.9.3                                   /tmp/crontab.ql1HJD/crontab                                    Modified
+
+#
+# For more information see the manual pages of crontab(5) and cron(8)
+#
+# m h  dom mon dow   command
+0 21 * * * echo "Welcome to cron nby Marcosfa" >> /tmp/echo.txt
+
+In this lab, you learned how to:
+
+List cron jobs using crontab -l
+Add cron jobs using crontab -e
+Remove your current crontab using crontab -r
